@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('WhatsApp Image 2024-11-22 at 08.25.54_9a63aeff.jpg'); /* Gantilah dengan path atau URL gambar Anda */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.5); /* Warna putih dengan transparansi 50% */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sedikit bayangan untuk menonjolkan form */
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: white; /* Tambahkan warna latar untuk memastikan bisa ditulis */
+        }
+
+        form input:focus {
+            outline: none;
+            border-color: #3498db; /* Pertegas fokus input */
+        }
+
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #172c3a;
+        }
+
+        .link {
+            margin-top: 15px;
+            display: block;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="store.html" method="post"> <!-- Arahkan ke store.html -->
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required> <!-- Kolom password -->
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <a href="registration.html" class="link">Belum punya akun? Daftar di sini</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bintang Timbul</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header {
+            background-image: url('WhatsApp Image 2024-11-22 at 07.54.42_6c735559.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        nav ul {
+            list-style: none;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #ffdd99;
+        }
+
+        .hero-content {
+            z-index: 1;
+            animation: slideInFromBottom 1.5s ease-out;
+        }
+
+        h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            animation: fadeInText 1.5s ease-in-out;
+        }
+
+        h2 {
+            font-size: 40px;
+            margin-bottom: 40px;
+            font-family: 'Roboto', sans-serif;
+            animation: fadeInText 2s ease-in-out;
+        }
+
+        .btn {
+            background-color: rgba(42, 19, 17, 0.7);
+            padding: 15px 30px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            font-weight: bold;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn:hover {
+            background-color: rgba(42, 19, 17, 0.9);
+            color: #ffdd99;
+            border-color: #ffdd99;
+            box-shadow: 0px 0px 10px rgba(255, 221, 153, 0.8);
+            transform: scale(1.1);
+        }
+
+        .action-buttons {
+            margin-top: 50px;
+        }
+
+        .action-buttons .btn {
+            margin: 0 10px;
+        }
+
+        footer {
+            background-color: #2a1311;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        /* Animasi */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>Bintang Timbul Automotif</h1>
+            <h2>Showroom And Sell Car Spare Parts</h2>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+        <div class="action-buttons">
+            <a href="login.html" class="btn">Sign in</a>
+            <a href="registration.html" class="btn">Sign up</a>
+        </div>
+    </header>
+    <footer>
+        <p>Alamat: Gedung pvj 38, Jalan Warung Jati No. 236, Jakarta Selatan,Jakarta, 12550</p>
+        <p>Telepon: +62 85794438902</p>
+    </footer>
+</body>
+</html>

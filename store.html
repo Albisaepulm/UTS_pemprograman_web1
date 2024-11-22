@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Toko</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('WhatsApp Image 2024-11-22 at 15.01.53_fa0f99ed.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            background: rgba(112, 168, 233, 0.85);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        nav {
+            background: rgba(52, 73, 94, 0.8);
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #3498db;
+            text-decoration: underline;
+        }
+
+        .content {
+            padding: 40px;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .section {
+            margin-top: 50px;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-container input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+
+        .product {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+        }
+
+        .product h3 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .product p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .product button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 10px 5px 0 0;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product button:hover {
+            background-color: #2980b9;
+        }
+
+        .logout {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout:hover {
+            background-color: #c0392b;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bintang Timbul Automotif</h1>
+        <button class="logout" onclick="logout()">Log Out</button>
+    </header>
+    <nav>
+        <a href="#Mobil">Mobil</a>
+        <a href="#Sparepart">Spare Part</a>
+        <a href="#Merk Kendaraan">Merk Kendaraan</a>
+        <a href="#Jenis Kendaraan">Jenis Kendaraan</a>
+        <a href="#Promo">Promo</a>
+    </nav>
+    <div class="content">
+        <h2>Selamat Datang di Toko Kami</h2>
+
+        <!-- Pencarian Barang -->
+        <div class="search-container">
+            <input type="text" id="searchInput" onkeyup="searchProduct()" placeholder="Cari produk...">
+        </div>
+
+        <!-- Bagian Mobil -->
+        <div id="mobil" class="section">
+            <h2>Mobil</h2>
+            <div class="product-list" id="mobilList">
+                <div class="product" data-name="Toyota Avanza">
+                    <h3>Toyota Avanza</h3>
+                    <p>Harga: Rp 200.000.000</p>
+                    <button onclick="pesanSekarang('Toyota Avanza')">Pesan Sekarang</button>
+                    <button onclick="metodePembayaran()">Metode Pembayaran</button>
+                </div>
+                <div class="product" data-name="Honda Civic">
+                    <h3>Honda Civic</h3>
+                    <p>Harga: Rp 350.000.000</p>
+                    <button onclick="pesanSekarang('Honda Civic')">Pesan Sekarang</button>
+                    <button onclick="metodePembayaran()">Metode Pembayaran</button>
+                </div>
+                <div class="product" data-name="Mitsubishi Pajero">
+                    <h3>Mitsubishi Pajero</h3>
+                    <p>Harga: Rp 500.000.000</p>
+                    <button onclick="pesanSekarang('Mitsubishi Pajero')">Pesan Sekarang</button>
+                    <button onclick="metodePembayaran()">Metode Pembayaran</button>
+                </div> 
+                <div class="product" data-name="Hyundai Palisade">
+                        <h3>Hyundai Palisade</h3>
+                        <p>Harga: Rp 1.000.000.000</p>
+                        <button onclick="pesanSekarang('Hyundai Palisade')">Pesan Sekarang</button>
+                        <button onclick="metodePembayaran()">Metode Pembayaran</button> 
+                </div>          
+                <div class="product" data-name="Mazda Hatchback 3">
+                        <h3>Mazda Hatchback 3</h3>
+                        <p>Harga: Rp 500.000.000</p>
+                        <button onclick="pesanSekarang('Mazda Hatchback 3')">Pesan Sekarang</button>
+                        <button onclick="metodePembayaran()">Metode Pembayaran</button>         
+                </div>
+            </div>
+        </div>
+
+        <!-- Bagian Spare Part -->
+        <div id="sparepart" class="section">
+            <h2>Spare Part</h2>
+            <div class="product-list" id="sparepartList">
+                <div class="product" data-name="Spare Part Mobil A">
+                    <h3>Spare Part Mobil A</h3>
+                    <p>Harga: Rp 1.000.000</p>
+                    <button onclick="pesanSekarang('Spare Part Mobil A')">Pesan Sekarang</button>
+                    <button onclick="metodePembayaran()">Metode Pembayaran</button>
+                </div>
+                <div class="product" data-name="Spare Part Mobil B">
+                    <h3>Spare Part Mobil B</h3>
+                    <p>Harga: Rp 2.000.000</p>
+                    <button onclick="pesanSekarang('Spare Part Mobil B')">Pesan Sekarang</button>
+                    <button onclick="metodePembayaran()">Metode Pembayaran</button>
+                </div>
+                <div class="product" data-name="Oli Mesin Premium">
+                    <h3>Oli Mesin Premium</h3>
+                    <p>Harga: Rp 300.000</p>
+                    <button onclick="pesanSekarang('Oli Mesin Premium')">Pesan Sekarang</button>
+                    <button onclick="metodePembayaran()">Metode Pembayaran</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            alert('Anda berhasil logout.');
+            window.location.href = 'index.html';
+        }
+
+        function pesanSekarang(productName) {
+            alert('Anda memesan: ' + productName);
+        }
+
+        function metodePembayaran() {
+            window.location.href = 'payment.html';
+        }
+
+        function searchProduct() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toLowerCase();
+            var products = document.querySelectorAll('.product');
+            
+            products.forEach(function(product) {
+                var productName = product.getAttribute('data-name').toLowerCase();
+                if (productName.includes(filter)) {
+                    product.style.display = '';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
