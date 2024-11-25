@@ -1,114 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Bintang Timbul Automotif</title>
+    <title>Bintang Timbul</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f9;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
         }
 
         header {
-            background: #2a1311;
-            color: white;
-            padding: 20px;
+            background-image: url('WhatsApp Image 2024-11-22 at 07.54.42_6c735559.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            color: white;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
         }
 
         nav ul {
             list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
+            position: absolute;
+            top: 20px;
+            left: 20px;
         }
 
         nav ul li {
-            margin: 0 15px;
+            display: inline;
+            margin-right: 20px;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+            transition: color 0.3s ease-in-out;
         }
 
         nav ul li a:hover {
-            text-decoration: underline;
+            color: #ffdd99;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .hero-content {
+            z-index: 1;
+            animation: slideInFromBottom 1.5s ease-out;
         }
 
         h1 {
-            color: #2a1311;
-            text-align: center;
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: fadeInText 1.5s ease-in-out;
         }
 
-        p {
-            color: #333;
-            text-align: justify;
+        h2 {
+            font-size: 40px;
+            margin-bottom: 40px;
+            animation: fadeInText 2s ease-in-out;
+        }
+
+        .btn {
+            background-color: rgba(42, 19, 17, 0.7);
+            padding: 15px 30px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            font-weight: bold;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn:hover {
+            background-color: rgba(42, 19, 17, 0.9);
+            color: #ffdd99;
+            border-color: #ffdd99;
+            box-shadow: 0px 0px 10px rgba(255, 221, 153, 0.8);
+            transform: scale(1.1);
+        }
+
+        .action-buttons {
+            margin-top: 50px;
+        }
+
+        .action-buttons .btn {
+            margin: 0 10px;
         }
 
         footer {
-            background: #2a1311;
+            background-color: #2a1311;
             color: white;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 20px;
+            font-size: 16px;
         }
 
-        a {
-            color: #3498db;
+        /* Animasi */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        section {
+            display: none;
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        section h2 {
+            color: #2a1311;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: white;
             text-decoration: none;
+            font-weight: bold;
         }
 
-        a:hover {
+        footer a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Bintang Timbul Automotif</h1>
+    <!-- Header Section -->
+    <header id="home" class="hero active">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                <li><a href="#about" onclick="showSection('about')">About</a></li>
             </ul>
         </nav>
+        <div class="hero-content">
+            <h1>Bintang Timbul Automotif</h1>
+            <h2>Showroom And Sell Car Spare Parts</h2>
+            <a href="#about" class="btn" onclick="showSection('about')">Learn More</a>
+        </div>
+        <div class="action-buttons">
+            <a href="login.html" class="btn">Sign in</a>
+            <a href="registration.html" class="btn">Sign up</a>
+        </div>
     </header>
-    <div class="container">
-        <h1>About Us</h1>
-        <p>
-            Welcome to <strong>Bintang Timbul Automotif</strong>, your trusted partner for high-quality car spare parts and an exclusive showroom for premium vehicles. 
-            Our company is dedicated to providing the best automotive solutions to meet your needs, whether you are looking for spare parts to maintain your vehicle or browsing for your next dream car.
-        </p>
-        <p>
-            At Bintang Timbul Automotif, we pride ourselves on offering genuine, top-tier spare parts to ensure the optimal performance and safety of your vehicle. Our team of experienced professionals is always ready to assist you in choosing the right products for your specific requirements.
-        </p>
-        <p>
-            Our showroom features a wide selection of cars, ranging from affordable options to luxury models, catering to various budgets and preferences. With a commitment to excellent customer service, we aim to make your automotive shopping experience seamless and enjoyable.
-        </p>
-        <p>
-            Thank you for choosing <strong>Bintang Timbul Automotif</strong>. We look forward to serving you and ensuring your satisfaction with our products and services. For further inquiries, please feel free to <a href="contact.html">contact us</a>.
-        </p>
-    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>Sejarah Perusahaan</h2>
+        <p>Bintang Timbul Automotif berdiri pada tahun 2000 dengan fokus pada penjualan suku cadang mobil berkualitas tinggi. Kami juga menawarkan showroom mobil yang terjangkau bagi masyarakat Indonesia.</p>
+
+        <h2>Alamat dan Kontak</h2>
+        <p>Alamat: Gedung PVJ 38, Jalan Warung Jati No. 236, Jakarta Selatan, Jakarta, 12550</p>
+        <p>Telepon: +62 85794438902</p>
+        <p>Email: info@bintangtimbul.com</p>
+        <p><a href="#home" onclick="showSection('home')">Kembali ke Beranda</a></p>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        &copy; 2024 Alby development. All Rights Reserved.
+        <p>&copy; 2024 Bintang Timbul Automotif</p>
     </footer>
+
+    <!-- Script -->
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('header, section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
